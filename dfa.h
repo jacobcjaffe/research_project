@@ -9,17 +9,20 @@
 class dfa 
 {
 private:
-    int** transitionTable = nullptr;
-    int** tableAccepted = nullptr;
+    int** transitionTable = new int*[2];
+    int*** tableAcceptedStr = nullptr;
     int sizeTransitionTable = -1;
     int* acceptingStates;
+    int numAcceptingStates = 0;
+    int lengthStr = 0;
 
 public :
-    // default constructor
-    dfa();
-    void FetchTransitionTable(std::string path);
-    int CalculateNumAccepted(int length);
+    // constructor called from input text file
+    dfa(std::string path);
+    int CalculateNumAccepted();
     void PrintTransitionTable();
+    void PrintAcceptingStates();
+    ~dfa();
 };
 
 #endif

@@ -11,6 +11,9 @@ transition from state 1 on 0, transition from state 1 on 1
 ...
 ...
 */
-int main(int argc, char** argv[]) {
-
+int main(int argc, char** argv) {
+    dfa* n = new dfa("input.txt");
+    n->PrintAcceptingStates();
+    n->PrintTransitionTable();
+    delete n;
 }
